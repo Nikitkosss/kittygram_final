@@ -1,16 +1,14 @@
 # flake8: noqa
 import os
 
-from dotenv import load_dotenv
 from pathlib import Path
 
-load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', '@pcsp&suowFN@6SZ3WHIaJFJmzuESUo0&B&bR5rzWk1l')
+SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
