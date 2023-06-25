@@ -1,16 +1,18 @@
 # flake8: noqa
 import os
 
+from dotenv import load_dotenv
 from pathlib import Path
 
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+SECRET_KEY = os.getenv('SECRET_KEY', '@pcsp&suowFN@6SZ3WHIaJFJmzuESUo0&B&bR5rzWk1l')
 
-DEBUG = False
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['158.161.0.160', '127.0.0.1', 'localhost', 'smilerightnow.hopto.org']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '123.123.0.123,123.0.0.1,localhost').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
